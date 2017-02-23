@@ -1,0 +1,24 @@
+{
+  "name": "eits-ng2",
+  "version": "1.0.5",
+  "module": "index.js",
+  "dependencies": {
+    "browserify":"latest",
+    "@types/browserify":"latest",
+    "typescript":"next",
+    "promise":"latest"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eitsopensource/eits-ng2.git"
+  },
+  "author": "Rodrigo P. Fraga",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eitsopensource/eits-ng2/issues"
+  },
+  "homepage": "https://github.com/eitsopensource/eits-ng2#readme"
+}
