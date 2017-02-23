@@ -87,8 +87,8 @@ class ServiceProxy
                 }
             };
             
-            const params = args.push(callback);
-            this.service[methodName].apply(this, params);
+            args.push(callback);
+            this.service[methodName].apply(this, args);
         });
         
         return promise;
