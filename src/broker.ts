@@ -78,14 +78,17 @@ class ServiceProxy
         
         const promise = new Promise<any>( (resolve, reject) => {
             
-            this.service[methodName](args, {
+            const callback = {
                 callback:( result ) => {
                     resolve( result );
                 },
                 errorHandler:( message ) => {
                     reject( new Error(message) );
                 }
-            });
+            };
+            
+            const params = args.push(callback);
+            this.service[methodName].apply(this, params);
         });
         
         return promise;
