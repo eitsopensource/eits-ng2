@@ -3,10 +3,10 @@
   "version": "1.0.7",
   "module": "index.js",
   "dependencies": {
-    "browserify":"latest",
-    "@types/browserify":"latest",
-    "typescript":"next",
-    "promise":"latest"
+    "@types/browserify": "latest",
+    "browserify": "latest",
+    "promise": "latest",
+    "typescript": "next"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

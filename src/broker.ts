@@ -4,7 +4,7 @@
 //import { Promise } from 'promise';
 
 /**
- * 
+ * //FIXME The service import dinamically not work beacuse of async call. Must wait for await e async methods. 
  */
 export class Broker
 {
@@ -15,10 +15,28 @@ export class Broker
      * 
      */
     private static services:Array<any> = new Array();
+    
+//    /**
+//     * 
+//     */
+//    private static BROKER_URL:string = "/broker";
 
     /*-------------------------------------------------------------------
 	 *				 		     BEHAVIORS
 	 *-------------------------------------------------------------------*/
+//    /**
+//     * 
+//     */
+//    public static configure( serverUrl:string ):Broker
+//    {
+//        Broker.BROKER_URL = serverUrl;
+//        
+//        Broker.importScript( Broker.BROKER_URL+"/engine.js" )
+//            .catch( (e) => console.error(e) );
+//        
+//        return Broker;
+//    }
+    
      /**
       * 
       */
@@ -32,6 +50,34 @@ export class Broker
          
          return Broker.services[serviceName];
      }
+
+//     /**
+//      * 
+//      */
+//     private static importScript( url:string ):Promise<HTMLScriptElement>
+//     {
+//         return new Promise<HTMLScriptElement>( (resolve, reject) => {
+//             const script = document.createElement("script");
+//             script.type = "text/javascript";
+//             script.src = url;
+//             script.onload = function() {
+//                 resolve( script );
+//             };
+//             script.onerror = function(event) {
+//                 reject( event );
+//             };
+//
+//             document.head.appendChild(script);
+//         });
+//     }
+//     
+//     /**
+//      * 
+//      */
+//     public static importService( serviceName:string ):Promise<HTMLScriptElement>
+//     {
+//         return Broker.importScript( Broker.BROKER_URL+"/interface/"+serviceName+".js" );
+//     }
 }
 
 /**
@@ -77,7 +123,7 @@ class ServiceProxy
         if ( !this.service[methodName] ) throw new Error("The method '"+methodName+"' not exists in the service '"+this.serviceName+"'");
         
         const promise = new Promise<any>( (resolve, reject) => {
-            
+        
             const callback = {
                 callback:( result ) => {
                     resolve( result );
