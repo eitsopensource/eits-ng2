@@ -1,13 +1,7 @@
 {
   "name": "eits-ng2",
-  "version": "1.0.7",
+  "version": "1.1.2",
   "module": "index.js",
-  "dependencies": {
-    "@types/browserify": "latest",
-    "browserify": "latest",
-    "promise": "latest",
-    "typescript": "next"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,5 +14,11 @@
   "bugs": {
     "url": "https://github.com/eitsopensource/eits-ng2/issues"
   },
-  "homepage": "https://github.com/eitsopensource/eits-ng2#readme"
+  "homepage": "https://github.com/eitsopensource/eits-ng2#readme",
+  "peerDependencies": {
+    "@angular/core": "^4.3.6",
+    "@angular/router": "^4.3.6",
+    "rxjs": "^5.0.1",
+    "zone.js": "^0.8.4"
+  }
 }
